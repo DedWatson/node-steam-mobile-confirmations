@@ -11,6 +11,10 @@ class Confirmation {
     this.type = data.type;
     this.tradeId = data.tradeId;
   }
+  toJSON() {
+    let {key, id, type, tradeId} = this;
+    return {key, id, type, tradeId};
+  }
 }
 
 module.exports = Confirmation;
