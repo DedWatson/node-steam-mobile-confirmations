@@ -68,7 +68,7 @@ class SteamCommunityMobileConfirmations extends EventEmitter{
             let confirmations = [];
             let finalConfirmations = [];
             let $ = Cheerio.load(body);
-            fs.writeFileSync(`output.html`, body);
+            //fs.writeFileSync(`output.html`, body);
 
             // Go through each confirmation, and generate a new Confirmation object
             $('[data-confid]').each((index, element) => {
@@ -134,7 +134,7 @@ class SteamCommunityMobileConfirmations extends EventEmitter{
             }
 
             let $ = Cheerio.load(body);
-            fs.writeFileSync(`output-details.html`, body);
+            //fs.writeFileSync(`output-details.html`, body);
 
             let tradeId = $('div.tradeoffer').attr('id').match(/\d+/i);
 
