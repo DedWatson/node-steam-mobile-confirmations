@@ -1,11 +1,11 @@
 {
   "name": "steam-mobile-confirmations",
-  "description": "An updated trade-confirmation module for node-steam",
+  "description": "An updated trade-confirmation module for node-steam with support socks5 proxy",
   "version": "1.1.0",
-  "author": "Luop90",
+  "author": "Mankov",
   "repository": {
     "type": "git",
-    "url": "https://github.com/luop90/node-steam-mobile-confirmations"
+    "url": "https://github.com/dizard/node-steam-mobile-confirmations"
   },
   "license": "MIT",
   "dependencies": {

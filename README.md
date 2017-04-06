@@ -1,6 +1,8 @@
 # node-steam-mobile-confirmations
 A pure JS library for accepting mobile confirmations. This is a better, more updated version of [GaletskyIvan's older module](https://github.com/GaletskyIvan/steamcommunity-mobile-confirmations).
 
+Add support socks proxy.
+
 **Currently a work-in-progress.**
 
 ## Functionality

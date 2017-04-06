@@ -25,6 +25,9 @@ class SteamCommunityMobileConfirmations {
     this.errorEvent = new events.EventEmitter;
     this._requestJar = request.jar();
     this._request = request.defaults({ jar: this._requestJar });
+    if (data.hasOwnProperty('requestOptions')) {
+      this._request = this._request.defaults(data.requestOptions);
+    }
 
     // Set each cookie NOM NOM
     for (let cookie of data.webCookie) {
