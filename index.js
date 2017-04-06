@@ -11,6 +11,7 @@ const Confirmation = require('./classes/Confirmation.js');
 
 class SteamCommunityMobileConfirmations extends EventEmitter{
     constructor(options) {
+        super();
         // Initialize values from the data object
         this.steamId = options.steamId;
         this.identitySecret = options.identitySecret;
