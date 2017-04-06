@@ -5,11 +5,11 @@ const request = require('request');
 const Cheerio = require('cheerio');
 const SteamTotp = require('steam-totp');
 const _ = require('underscore');
-const events = require('events');
+const EventEmitter = require('events').EventEmitter;
 
 const Confirmation = require('./classes/Confirmation.js');
 
-class SteamCommunityMobileConfirmations {
+class SteamCommunityMobileConfirmations extends EventEmitter{
     constructor(options) {
         // Initialize values from the data object
         this.steamId = options.steamId;
@@ -22,7 +22,6 @@ class SteamCommunityMobileConfirmations {
         this.STEAM_BASE = 'https://steamcommunity.com'
         this.has429Error = false;
         this.needsNewSession = false;
-        this.errorEvent = new events.EventEmitter;
         this._requestJar = request.jar();
         this._request = request.defaults({jar: this._requestJar});
         if (options.hasOwnProperty('requestOptions')) {
@@ -183,7 +182,7 @@ class SteamCommunityMobileConfirmations {
                 console.error(body);
 
                 this.needsNewSession = true;
-                this.errorEvent.emit('needsNewSession');
+                this.emit('needsNewSession');
 
                 setTimeout(() => {
                     this.request(url, method, form, callback);
