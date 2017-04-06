@@ -20,7 +20,7 @@ class SteamCommunityMobileConfirmations extends EventEmitter{
         this.timeBetweenCalls = options.waitTime || 10000;
 
         // Initialize all others
-        this.STEAM_BASE = 'https://steamcommunity.com'
+        this.STEAM_BASE = 'https://steamcommunity.com';
         this.has429Error = false;
         this.needsNewSession = false;
         this._requestJar = request.jar();
