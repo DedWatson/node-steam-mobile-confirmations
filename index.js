@@ -71,7 +71,7 @@ class SteamCommunityMobileConfirmations extends EventEmitter{
             //fs.writeFileSync(`output.html`, body);
 
             // Go through each confirmation, and generate a new Confirmation object
-            $('[data-confid]').each((index, element) => {
+            $('div[data-confid]').each((index, element) => {
                 let $confirmation = $(element);
 
                 confirmations.push(new Confirmation({
