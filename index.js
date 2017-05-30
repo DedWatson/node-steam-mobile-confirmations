@@ -48,6 +48,19 @@ class SteamCommunityMobileConfirmations extends EventEmitter{
         this.needsNewSession = false;
     }
 
+    getWindowConfirmationsHTML(callback) {
+        let url = `${this.STEAM_BASE}/mobileconf/conf?${this._generateQueryString('conf')}`;
+
+        this.request(url, 'GET', (err, response, body) => {
+            let error = checkResponse(err, response, body);
+            if (error) {
+                callback(error, null);
+                return;
+            }
+            callback(null, body);
+        });
+    }
+
     /**
      * Grabs all confirmations
      * @param {Function} callback The function callback'd.
